@@ -1,0 +1,18 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  pool: 20
+  username: aimeesimone
+  password: 
+
+development:
+  <<: *defaults
+  database: happymedium_development
+
+test:
+  <<: *defaults
+  database: happymedium_test
+
+production:
+  <<: *defaults
+  database: happymedium_development
