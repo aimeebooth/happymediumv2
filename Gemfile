@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.5'
 
 gem 'compass'
 gem 'devise'
@@ -12,6 +12,7 @@ gem 'pg'
 gem 'sass'
 gem 'twitter'
 gem 'will_paginate'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'guard'
