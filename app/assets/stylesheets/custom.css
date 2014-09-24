@@ -1,0 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+a, a:hover, a:visited{
+  color: #d4817a;
+}
+
+.container{
+  background: url(/assets/border.png) repeat-x top;
+  width: 100%;
+  margin: 0;
+}
+
+.logo{
+  background: url(/assets/logo.png) no-repeat center;
+  height: 180px;
+  width: 180px;
+  margin: 0 auto;
+  text-indent: -9999px;
+}
+
+.nav{
+  width: 300px;
+  margin: 40px auto 0;
+}
+
+.nav li{
+  display: inline;
+  text-align: center;
+  float: left;
+}
+
+.nav li a{
+  color: #666;
+  font-family: 'Lobster', serif;
+  text-transform: lowercase;
+  font-size: 18px;
+}

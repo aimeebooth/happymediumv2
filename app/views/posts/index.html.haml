@@ -1,20 +1,13 @@
-%h1 Listing posts
-
-%table
-  %tr
-    %th Title
-    %th Body
-    %th
-    %th
-    %th
-
+.row
   - @posts.each do |post|
-    %tr
-      %td= post.title
-      %td= post.body
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .col-lg-4
+      %h2
+        = link_to post.title, post
+      %p= post.body
+      %p
+        - if user_signed_in? && current_user.admin?
+          = link_to 'Edit', edit_post_path(post)
+          = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 - if user_signed_in? && current_user.admin?
   %br
