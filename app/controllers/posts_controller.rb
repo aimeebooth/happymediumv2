@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /posts/1
@@ -47,19 +47,13 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def post_params
-      params.require(:post).permit(:title, :body)
-    end
-
-    def verify_is_admin
-      unless (current_user && current_user.admin?)
-        redirect_to root_path, notice: 'You must be an admin to do that.' 
-      end
-    end
+  # Only allow a trusted parameter "white list" through.
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
 end
