@@ -1,7 +1,10 @@
-%h1 Editing post
+.row
+  %h3 
+    Edit 
+    =@post.title
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+  = link_to 'Show', @post
+  \|
+  = link_to 'Back', posts_path

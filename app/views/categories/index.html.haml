@@ -1,0 +1,17 @@
+%h1 Listing categories
+
+%table
+  %tr
+    %th Title
+    %th
+
+  - @categories.each do |category|
+    %tr
+      %td= category.title
+      - if user_signed_in? && current_user.admin?
+        %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+- if user_signed_in? && current_user.admin?
+  %br
+
+  = link_to 'New Category', new_category_path

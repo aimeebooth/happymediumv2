@@ -3,6 +3,8 @@
     .col-lg-4
       %h2
         = link_to post.title, post
+      %p
+        %em= post.category_title
       %p= post.body
       %p
         - if user_signed_in? && current_user.admin?

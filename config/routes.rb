@@ -1,6 +1,10 @@
 Happymediumv2::Application.routes.draw do
+  resources :categories
+
   devise_for :users
-  resources :posts
+  resources :posts do
+    resources :tags
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
