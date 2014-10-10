@@ -45,5 +45,7 @@ a, a:hover, a:visited{
 }
 
 .footer{
-  margin: 50px 0;
+  margin: 50px;
+  padding: 0 15px;
+  text-align: center;
 }
