@@ -7,23 +7,23 @@
     = csrf_meta_tags
   %body
     .container
-      %ul.nav
-        %li.active
-          = link_to 'Home', posts_path
-        %li
-          %a{:href => "#"} About
-        %li
-          %a{:href => "#"} Contact
-        %li
-          %a{:href => "#"} Resources
-        / %li
-        /   - if user_signed_in?
-        /     = link_to 'Logout', destroy_user_session_path, :method => :delete
-        /   - else
-        /     = link_to 'Log In', new_user_session_path
-      .logo
-        Happy Medium
       .masthead
+        .inner
+          %h1 Happy Medium
+          %ul.nav
+            %li.active
+              = link_to 'Home', posts_path
+            %li
+              %a{:href => "#"} About
+            %li
+              %a{:href => "#"} Contact
+            %li
+              %a{:href => "#"} Resources
+            %li
+              - if user_signed_in?
+                = link_to 'Logout', destroy_user_session_path, :method => :delete
+              - else
+                = link_to 'Log In', new_user_session_path
 
       = yield
 

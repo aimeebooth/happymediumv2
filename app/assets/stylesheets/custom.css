@@ -4,10 +4,12 @@
 
 body{
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  color: #777;
 }
 
 h2{
-  font-size: 24px;
+  font-size: 36px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -20,7 +22,32 @@ a, a:hover, a:visited{
 
 .container{
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 2556px;
+  padding: 0;
+}
+
+.masthead{
+  min-height: 650px;
+  background: url(/assets/porch_dark.png) no-repeat center top;
+  background-size: cover;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 2px;
+}
+
+.masthead .inner{
+  padding: 20px 200px;
+  min-height: 190px;
+  background: rgba(0, 0, 0, .5);
+}
+
+.masthead h1{
+  background: url(/assets/header_logo.png) no-repeat left;
+  text-indent: -9999px;
+  float: left;
+  height: 90px;
+  width: 180px;
+  margin: 30px 0 0 0;
 }
 
 .logo{
@@ -32,8 +59,9 @@ a, a:hover, a:visited{
 }
 
 .nav{
-  width: 315px;
-  margin: 80px auto -20px;
+  float: right;
+  padding: 20px 0;
+  margin: 0;
 }
 
 .nav li{
@@ -49,8 +77,25 @@ a, a:hover, a:visited{
   font-size: 18px;
 }
 
+.nav li a:hover{
+  background: transparent;
+  color: #808080;
+}
+
+.content{
+  margin: 20px 0;
+}
+
 .row {
   margin: 0 200px;
+}
+
+.row img{
+  border: 1px solid lightgray;
+  padding: 2px;
+  width: 60%;
+  display: block;
+  margin: 20px auto;
 }
 
 .footer{
