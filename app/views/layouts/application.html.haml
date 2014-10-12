@@ -15,10 +15,12 @@
         %li
           %a{:href => "#"} Contact
         %li
-          - if user_signed_in?
-            = link_to 'Logout', destroy_user_session_path, :method => :delete
-          - else
-            = link_to 'Log In', new_user_session_path
+          %a{:href => "#"} Resources
+        / %li
+        /   - if user_signed_in?
+        /     = link_to 'Logout', destroy_user_session_path, :method => :delete
+        /   - else
+        /     = link_to 'Log In', new_user_session_path
       .logo
         Happy Medium
       .masthead

@@ -1,17 +1,16 @@
 .row
   - @posts.each do |post|
-    .col-lg-4
-      %h2
-        = link_to post.title, post
-      %p
-        %em= post.category_title
-      %p= post.body
-      %p
-        - if user_signed_in? && current_user.admin?
-          = link_to 'Edit', edit_post_path(post)
-          = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %h2
+      = link_to post.title, post
+    %p
+      %em= post.category_title
+    %p= truncate(post.body, length: 1000, omission: '...')
+    %p
+      - if user_signed_in? && current_user.admin?
+        = link_to 'Edit', edit_post_path(post)
+        = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-.row.last
+.row
   = will_paginate @posts
 
   - if user_signed_in? && current_user.admin?
