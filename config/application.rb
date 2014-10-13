@@ -21,9 +21,6 @@ module Happymediumv2
     # config.i18n.default_locale = :de
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    config.cache_classes = true
-    config.serve_static_assets = true
     config.assets.compile = true
-    config.assets.digest = true
   end
 end
