@@ -22,7 +22,5 @@ module Happymediumv2
     # config.i18n.default_locale = :de
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
-    config.assets.compile = true
-    config.assets.precompile += %w( bootstrap-theme.css bootstrap.css custom.css )
   end
 end
