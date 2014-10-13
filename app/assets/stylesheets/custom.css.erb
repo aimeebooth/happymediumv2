@@ -29,7 +29,7 @@ a, a:hover, a:visited{
 
 .masthead{
   min-height: 650px;
-  background: url(/assets/porch_dark.png) no-repeat center top;
+  background: url('<%= asset_path("porch_dark.png") %>') no-repeat center top;
   background-size: cover;
   border-bottom: 1px solid lightgray;
   padding-bottom: 2px;
@@ -42,20 +42,12 @@ a, a:hover, a:visited{
 }
 
 .masthead h1{
-  background: url(/assets/header_logo.png) no-repeat left;
+  background: url('<%= asset_path("header_logo.png") %>') no-repeat left;
   text-indent: -9999px;
   float: left;
   height: 90px;
   width: 180px;
   margin: 30px 0 0 0;
-}
-
-.logo{
-  background: url(/assets/logo.png) no-repeat center;
-  height: 180px;
-  width: 180px;
-  margin: 0 auto;
-  text-indent: -9999px;
 }
 
 .nav{
