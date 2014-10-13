@@ -22,5 +22,6 @@ module Happymediumv2
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.assets.compile = true
+    config.serve_static_assets = true
   end
 end
