@@ -38,4 +38,5 @@ group :assets, :staging, :production do
   gem 'compass-rails'
   gem 'sass-rails'
   gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
 end
