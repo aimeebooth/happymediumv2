@@ -20,6 +20,9 @@ gem 'coffee-rails'
 gem 'compass-rails'
 gem 'sass-rails'
 
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
 group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
