@@ -12,7 +12,11 @@ gem 'pg'
 gem 'sass'
 gem 'twitter'
 gem 'will_paginate'
+
 gem 'jquery-rails'
+gem 'coffee-rails'
+gem 'compass-rails'
+gem 'sass-rails'
 
 group :development, :test do
   gem 'guard'
@@ -33,8 +37,6 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-group :assets, :staging, :production do
-  gem 'coffee-rails'
-  gem 'compass-rails'
-  gem 'sass-rails'
+group :staging, :production do
+  gem 'rails_12factor'
 end
