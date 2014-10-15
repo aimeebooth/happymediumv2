@@ -1,0 +1,8 @@
+.content
+  .row
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: name
+      
+    %h2= @category.title
+
+    = link_to 'Back', categories_path
