@@ -1,4 +1,4 @@
-Happymediumv2::Application.routes.draw do
+Rails.application.routes.draw do
   resources :categories
 
   devise_for :users

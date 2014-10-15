@@ -1,4 +1,4 @@
-Happymediumv2::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,5 +27,11 @@ Happymediumv2::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   
-  config.assets.raise_production_errors = true
+  # Adds additional error checking when serving assets at runtime.
+  # Checks for improperly declared sprockets dependencies.
+  # Raises helpful error messages.
+  config.assets.raise_runtime_errors = true
+
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
 end
