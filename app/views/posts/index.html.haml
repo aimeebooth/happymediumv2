@@ -5,7 +5,7 @@
         = link_to post.title, post
       %p
         %em= post.category_title
-      %p= truncate(post.body, length: 1000, omission: '...')
+      %p= truncate(raw(post.body), length: 1000, omission: '...')
       %p
         = link_to 'View', post_path(post)
         - if user_signed_in? && current_user.admin?
