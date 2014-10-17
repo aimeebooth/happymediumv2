@@ -4,7 +4,10 @@
       %h2
         = link_to post.title, post
       %p
-        %em= post.category_title
+        = format_date(post.created_at)
+        \|
+        %em 
+          = post.category_title
       %p= truncate(raw(post.body), length: 1000, omission: '...')
       %p
         = link_to 'View', post_path(post)
