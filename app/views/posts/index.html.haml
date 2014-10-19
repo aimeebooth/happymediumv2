@@ -8,7 +8,7 @@
         \|
         %em 
           = post.category_title
-      %p= truncate(raw(post.body), length: 1000, omission: '...')
+      %p= truncate(post.body.html_safe, length: 1000, omission: '...', escape: false)
       %p
         = link_to 'View', post_path(post)
         - if user_signed_in? && current_user.admin?
