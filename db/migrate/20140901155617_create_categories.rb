@@ -1,8 +1,10 @@
 class CreateCategories < ActiveRecord::Migration
   def change
-    create_table :categories do |t|
+    unless table_exists? :categories
+      create_table :categories do |t|
 
-      t.timestamps
+        t.timestamps
+      end
     end
   end
 end
