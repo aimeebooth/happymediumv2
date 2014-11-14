@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    @related_posts = @post.related_posts
   end
 
   # GET /posts/new

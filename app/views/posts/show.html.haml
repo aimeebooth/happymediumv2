@@ -20,4 +20,14 @@
       \|
     = link_to 'Back', posts_path
 
- 
+    - if @related_posts.any?
+      %div.related_posts
+        %h3 You Might Also Like
+
+        %ul
+          - @related_posts.each do |post|
+            %li
+              %h4= post.title
+              %p= truncate_html(raw(post.body), length: 200, omission: '...', word_boundary: false)
+              %p=link_to 'Read More', post_path(post)
+   
