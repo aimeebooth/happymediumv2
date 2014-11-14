@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.posts.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
 
-    @rss = Post.posts
+    @rss = Post.posts.order('created_at desc')
     
     respond_to do |format|
       format.html 
