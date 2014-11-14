@@ -11,7 +11,13 @@
         = @post.category_title
     %p= raw @post.body
 
+    %p
+      %a{"data-pin-do" => "buttonBookmark", :href => "//pinterest.com/pin/create/button/"}
+        %img{:src => "//assets.pinterest.com/images/pidgets/pin_it_button.png"}
+
     - if user_signed_in? && current_user.admin?
       = link_to 'Edit', edit_post_path(@post)
       \|
     = link_to 'Back', posts_path
+
+ 
