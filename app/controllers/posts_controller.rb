@@ -5,6 +5,14 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.posts.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
+
+    @rss = Post.posts
+    
+    respond_to do |format|
+      format.html 
+      format.xml  { render :xml => @posts }
+      format.rss
+    end
   end
 
   # GET /posts/1
