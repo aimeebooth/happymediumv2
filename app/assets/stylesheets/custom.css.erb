@@ -99,3 +99,32 @@ a, a:hover, a:visited{
   text-transform: lowercase;
   font-size: 18px;
 }
+
+.footer ul{
+  padding: 0;
+}
+
+.footer li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+.footer li a{
+  height: 40px;
+  width: 40px;
+  margin: 0 2px;
+  display: block;
+  text-indent: -9999px;
+}
+
+.footer li #instagram{
+  background: url('<%= image_path("instagram.png") %>') no-repeat center;
+}
+
+.footer li #pinterest{
+  background: url('<%= image_path("pinterest.png") %>') no-repeat center;
+}
+
+.footer li #rss{
+  background: url('<%= image_path("rss.png") %>') no-repeat center;
+}
