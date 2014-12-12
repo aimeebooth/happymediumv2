@@ -25,14 +25,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'truncate_html'
 
 group :development, :test do
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-spork'
   gem 'pry'
   gem 'pry-debugger'
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :test do
