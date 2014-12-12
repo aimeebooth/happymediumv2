@@ -17,6 +17,9 @@
               = link_to 'About', '/posts/68'
             %li
               = link_to 'Resources', '/posts/69'
+            - if user_signed_in?
+              %li 
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete
 
       = yield
 
