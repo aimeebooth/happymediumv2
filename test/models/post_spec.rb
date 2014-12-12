@@ -12,6 +12,15 @@ describe 'Post' do
     end
   end
 
+  context '.unarchived' do
+    let(:archived_post) { create(:post, :archived) }
+
+    it 'returns a list of posts that are not archived' do
+      Post.unarchived.should include(post)
+      Post.unarchived.should_not include(archived_post)
+    end
+  end
+
   context '#category_title' do
     context 'with a category title' do
       it 'returns the title' do
@@ -36,7 +45,15 @@ describe 'Post' do
     it 'returns a list of related posts' do
       post.related_posts.should include(related_post)
     end
+  end
 
+  context '#archive!' do
+    subject { post.archive! }
+
+    it 'sets the archived boolean to true' do
+      subject
+      post.reload.archived.should eq(true)
+    end
   end
 
 end

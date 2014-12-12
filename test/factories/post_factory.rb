@@ -6,6 +6,10 @@ FactoryGirl.define do
     title "test"
     body "test description"
 
+    trait :archived do
+      archived true
+    end
+    
     trait :uncategorized do
       category nil
     end

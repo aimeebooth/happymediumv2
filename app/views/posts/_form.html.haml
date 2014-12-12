@@ -18,5 +18,9 @@
     = f.label :category
     = f.collection_select :category_id, Category.all, :id, :title
 
+  .field
+    = f.label :archived, 'Archive?'
+    = f.check_box :archived
+
   .actions
     = f.submit 'Save'
