@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
   belongs_to :category
 
-  scope :posts, -> { unarchived.joins(:category).where.not(categories: {title: 'Page'}) }
-  scope :unarchived, -> { where(archived: false) }
+  scope :posts, -> { joins(:category).where.not(categories: {title: 'Page'}) }
+  scope :unarchived_posts, -> { posts.where(archived: false) }
 
   def category_title
     category.nil? ? "Uncategorized" : category.title  

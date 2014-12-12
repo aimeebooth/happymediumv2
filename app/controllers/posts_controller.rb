@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.posts.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
+    @posts = Post.unarchived_posts.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
 
-    @rss = Post.posts.order('created_at desc')
+    @rss = Post.unarchived_posts.order('created_at desc')
     
     respond_to do |format|
       format.html 
@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    redirect_to posts_url unless archive_viewable?
     @related_posts = @post.related_posts
   end
 
@@ -56,6 +57,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def archive_viewable?
+    @post.archived? && is_admin?
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_post

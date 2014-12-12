@@ -12,12 +12,12 @@ describe 'Post' do
     end
   end
 
-  context '.unarchived' do
+  context '.unarchived_posts' do
     let(:archived_post) { create(:post, :archived) }
 
     it 'returns a list of posts that are not archived' do
-      Post.unarchived.should include(post)
-      Post.unarchived.should_not include(archived_post)
+      Post.unarchived_posts.should include(post)
+      Post.unarchived_posts.should_not include(archived_post)
     end
   end
 
@@ -50,7 +50,7 @@ describe 'Post' do
   context '#archive!' do
     subject { post.archive! }
 
-    it 'sets the archived boolean to true' do
+    it 'sets the archived value to true' do
       subject
       post.reload.archived.should eq(true)
     end
