@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    redirect_to posts_url unless archive_viewable?
+    redirect_to posts_url unless post_viewable?
     @related_posts = @post.related_posts
   end
 
@@ -58,8 +58,8 @@ class PostsController < ApplicationController
 
   private
 
-  def archive_viewable?
-    @post.archived? && is_admin?
+  def post_viewable?
+    !@post.archived? || is_admin?
   end
 
   # Use callbacks to share common setup or constraints between actions.
