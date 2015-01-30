@@ -9,6 +9,10 @@ FactoryGirl.define do
     trait :archived do
       archived true
     end
+
+    trait :draft do
+      draft true
+    end
     
     trait :uncategorized do
       category nil
