@@ -16,4 +16,9 @@ class Post < ActiveRecord::Base
     self.archived = true
     self.save!
   end
+
+  def save_as_draft!
+    self.draft = true
+    self.save!
+  end
 end
