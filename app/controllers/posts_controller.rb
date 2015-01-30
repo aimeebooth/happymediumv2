@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.unarchived_posts.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
+    @posts = Post.public_posts.order('created_at desc').paginate(:page => params[:page], :per_page => 6)
 
-    @rss = Post.unarchived_posts.order('created_at desc')
+    @rss = Post.public_posts.order('created_at desc')
     
     respond_to do |format|
       format.html 
