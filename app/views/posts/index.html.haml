@@ -8,6 +8,10 @@
         \|
         %em 
           = post.category_title
+        - if post.draft?
+          \|
+          %em
+            = "draft"
       %p
         = truncate_html(raw(post.body), length: 1000, omission: '...', word_boundary: false)
       %p

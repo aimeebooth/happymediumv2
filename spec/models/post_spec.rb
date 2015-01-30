@@ -12,12 +12,14 @@ describe 'Post' do
     end
   end
 
-  context '.unarchived_posts' do
+  context '.public_posts' do
     let(:archived_post) { create(:post, :archived) }
+    let(:draft_post) { create(:post, :draft) }
 
     it 'returns a list of posts that are not archived' do
-      Post.unarchived_posts.should include(post)
-      Post.unarchived_posts.should_not include(archived_post)
+      Post.public_posts.should include(post)
+      Post.public_posts.should_not include(archived_post)
+      Post.public_posts.should_not include(draft_post)
     end
   end
 
@@ -44,24 +46,6 @@ describe 'Post' do
 
     it 'returns a list of related posts' do
       post.related_posts.should include(related_post)
-    end
-  end
-
-  context '#archive!' do
-    subject { post.archive! }
-
-    it 'sets the archived value to true' do
-      subject
-      post.reload.archived.should eq(true)
-    end
-  end
-
-  context '#save_as_draft' do
-    subject { post.save_as_draft! }
-    
-    it '' do
-      subject
-      post.reload.draft?.should eq(true)
     end
   end
 
