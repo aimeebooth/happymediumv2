@@ -23,6 +23,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'truncate_html'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'pry'
