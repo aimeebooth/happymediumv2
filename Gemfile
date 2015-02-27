@@ -32,6 +32,7 @@ group :development, :test do
   gem 'pry-remote'
   gem 'rspec-rails'
   gem 'faker'
+  gem 'capybara'
 end
 
 group :test do
