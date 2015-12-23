@@ -8,6 +8,7 @@ defaults: &defaults
 development:
   <<: *defaults
   database: happymedium_development
+  host: localhost
 
 test:
   <<: *defaults
