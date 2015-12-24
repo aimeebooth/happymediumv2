@@ -1,7 +1,7 @@
 .content
   - @posts.each do |post|
     .row
-      %h2
+      %h2{class: "#{post.category_title.downcase}"}
         = link_to post.title, post
       %p
         = format_date(post.created_at)
