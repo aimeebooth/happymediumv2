@@ -25,22 +25,26 @@ h2, h4{
 }
 
 h2.page, h2.uncategorized,
-h4.page, h4.uncategorized{
+h4.page, h4.uncategorized,
+.uncategorized h4{
   background: url('<%= image_path("testimonials.png") %>') no-repeat left; 
 }
 
 h2.recipes,
-h4.recipes{
+h4.recipes,
+.recipes h4{
   background: url('<%= image_path("nutrition.png") %>') no-repeat left; 
 }
 
 h2.running, h2.fitness,
-h4.running, h4.fitness{
+h4.running, h4.fitness,
+.running h4{
   background: url('<%= image_path("fitness.png") %>') no-repeat left; 
 }
 
 h2.travel, h2.wellness, h2.metrics,
-h4.travel, h4.wellness, h4.metrics{
+h4.travel, h4.wellness, h4.metrics,
+.travel h4, .wellness h4, .metrics h4{
   background: url('<%= image_path("lifestyle.png") %>') no-repeat left; 
 }
 
