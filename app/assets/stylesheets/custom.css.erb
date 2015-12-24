@@ -16,24 +16,31 @@ h1, h2, h3, h4, h5, h6{
 h2{
   font-size: 24px;
   color: rgba(0, 61, 81, 1);
+}
+
+h2, h4{
   border-bottom: 1px solid #ccc;
   line-height: 48px;
   padding-left: 30px;
 }
 
-h2.page, h2.uncategorized{
+h2.page, h2.uncategorized,
+h4.page, h4.uncategorized{
   background: url('<%= image_path("testimonials.png") %>') no-repeat left; 
 }
 
-h2.recipes{
+h2.recipes,
+h4.recipes{
   background: url('<%= image_path("nutrition.png") %>') no-repeat left; 
 }
 
-h2.running, h2.fitness{
+h2.running, h2.fitness,
+h4.running, h4.fitness{
   background: url('<%= image_path("fitness.png") %>') no-repeat left; 
 }
 
-h2.travel, h2.wellness, h2.metrics{
+h2.travel, h2.wellness, h2.metrics,
+h4.travel, h4.wellness, h4.metrics{
   background: url('<%= image_path("lifestyle.png") %>') no-repeat left; 
 }
 
