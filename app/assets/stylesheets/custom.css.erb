@@ -74,10 +74,13 @@ strong{
   margin: 0;
 }
 
-.callout{
-  background: url('<%= image_path("porch.png") %>') no-repeat center center;
-  background-size: cover;
-  min-height: 300px;
+/* todo: i am here; add media queries for mobile */
+@media (min-width: 800px) {
+  .callout{
+    background: url('<%= image_path("porch.png") %>') no-repeat center center;
+    background-size: cover;
+    min-height: 300px;
+  }
 }
 
 .nav{
